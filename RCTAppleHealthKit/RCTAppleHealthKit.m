@@ -677,6 +677,7 @@ RCT_EXPORT_METHOD(getClinicalRecords:(NSDictionary *)input callback:(RCTResponse
     NSArray *types = @[
         @"ActiveEnergyBurned",
         @"BasalEnergyBurned",
+        @"BloodGlucose",
         @"Cycling",
         @"HeartRate",
         @"HeartRateVariabilitySDNN",
@@ -783,6 +784,7 @@ RCT_EXPORT_METHOD(getClinicalRecords:(NSDictionary *)input callback:(RCTResponse
         NSArray *fitnessObservers = @[
             @"ActiveEnergyBurned",
             @"BasalEnergyBurned",
+            @"BloodGlucose",
             @"Cycling",
             @"HeartRate",
             @"HeartRateVariabilitySDNN",
