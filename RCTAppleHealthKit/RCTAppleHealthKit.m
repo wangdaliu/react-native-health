@@ -675,31 +675,31 @@ RCT_EXPORT_METHOD(getClinicalRecords:(NSDictionary *)input callback:(RCTResponse
 
 - (NSArray<NSString *> *)supportedEvents {
     NSArray *types = @[
-        @"ActiveEnergyBurned",
-        @"BasalEnergyBurned",
+//        @"ActiveEnergyBurned",
+//        @"BasalEnergyBurned",
         @"BloodGlucose",
-        @"Cycling",
-        @"HeartRate",
-        @"HeartRateVariabilitySDNN",
-        @"RestingHeartRate",
-        @"Running",
-        @"StairClimbing",
-        @"StepCount",
-        @"Swimming",
-        @"Vo2Max",
-        @"Walking",
-        @"Workout",
-        @"MindfulSession",
-        @"AllergyRecord",
-        @"ConditionRecord",
-        @"CoverageRecord",
-        @"ImmunizationRecord",
-        @"LabResultRecord",
-        @"MedicationRecord",
-        @"ProcedureRecord",
-        @"VitalSignRecord",
-        @"SleepAnalysis",
-        @"InsulinDelivery"
+//        @"Cycling",
+//        @"HeartRate",
+//        @"HeartRateVariabilitySDNN",
+//        @"RestingHeartRate",
+//        @"Running",
+//        @"StairClimbing",
+//        @"StepCount",
+//        @"Swimming",
+//        @"Vo2Max",
+//        @"Walking",
+//        @"Workout",
+//        @"MindfulSession",
+//        @"AllergyRecord",
+//        @"ConditionRecord",
+//        @"CoverageRecord",
+//        @"ImmunizationRecord",
+//        @"LabResultRecord",
+//        @"MedicationRecord",
+//        @"ProcedureRecord",
+//        @"VitalSignRecord",
+//        @"SleepAnalysis",
+//        @"InsulinDelivery"
     ];
     
     NSArray *templates = @[@"healthKit:%@:new", @"healthKit:%@:failure", @"healthKit:%@:enabled", @"healthKit:%@:sample", @"healthKit:%@:setup:success", @"healthKit:%@:setup:failure"];
@@ -782,47 +782,47 @@ RCT_EXPORT_METHOD(getClinicalRecords:(NSDictionary *)input callback:(RCTResponse
 
     if ([HKHealthStore isHealthDataAvailable]) {
         NSArray *fitnessObservers = @[
-            @"ActiveEnergyBurned",
-            @"BasalEnergyBurned",
+//            @"ActiveEnergyBurned",
+//            @"BasalEnergyBurned",
             @"BloodGlucose",
-            @"Cycling",
-            @"HeartRate",
-            @"HeartRateVariabilitySDNN",
-            @"RestingHeartRate",
-            @"Running",
-            @"StairClimbing",
-            @"StepCount",
-            @"Swimming",
-            @"Vo2Max",
-            @"Walking",
-            @"Workout",
-            @"MindfulSession",
-            @"SleepAnalysis",
+//            @"Cycling",
+//            @"HeartRate",
+//            @"HeartRateVariabilitySDNN",
+//            @"RestingHeartRate",
+//            @"Running",
+//            @"StairClimbing",
+//            @"StepCount",
+//            @"Swimming",
+//            @"Vo2Max",
+//            @"Walking",
+//            @"Workout",
+//            @"MindfulSession",
+//            @"SleepAnalysis",
         ];
 
         for(NSString * type in fitnessObservers) {
             [self fitness_registerObserver:type bridge:bridge hasListeners:hasListeners];
         }
         
-        NSArray *clinicalObservers = @[
-            @"AllergyRecord",
-            @"ConditionRecord",
-            @"CoverageRecord",
-            @"ImmunizationRecord",
-            @"LabResultRecord",
-            @"MedicationRecord",
-            @"ProcedureRecord",
-            @"VitalSignRecord"
-        ];
-        
-        for(NSString * type in clinicalObservers) {
-            [self clinical_registerObserver:type bridge:bridge hasListeners:hasListeners];
-        }
-        
-        [self results_registerObservers:bridge hasListeners:hasListeners];
+//        NSArray *clinicalObservers = @[
+//            @"AllergyRecord",
+//            @"ConditionRecord",
+//            @"CoverageRecord",
+//            @"ImmunizationRecord",
+//            @"LabResultRecord",
+//            @"MedicationRecord",
+//            @"ProcedureRecord",
+//            @"VitalSignRecord"
+//        ];
+//        
+//        for(NSString * type in clinicalObservers) {
+//            [self clinical_registerObserver:type bridge:bridge hasListeners:hasListeners];
+//        }
+//        
+//        [self results_registerObservers:bridge hasListeners:hasListeners];
 
         NSLog(@"[HealthKit] Background observers added to the app");
-        [self startObserving];
+//        [self startObserving];
     } else {
         NSLog(@"[HealthKit] Apple HealthKit is not available in this platform");
     }
